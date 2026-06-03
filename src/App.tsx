@@ -415,7 +415,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "bus-10",
-    titleTel: "ఐరోపా విమానయాన దిగ్గజంతో భారీ క్లౌడ్ ఒప్పందం కుదుర్చుకున్న టిసిఎస్",
+    titleTel: "ఐరోపా విమానయాన దిగ్గజంతో భారీ క్లౌడ్ ఒప్పందంకుదుర్చుకున్న టిసిఎస్",
     titleEng: "TCS Secures Multi-Million Dollar Cloud Overhaul Pact with Euro Airways",
     summaryEng: "Tata Consultancy Services (TCS) locked in an expansive modern hybrid cloud integration model today, which is expected to overhaul ticketing and airline customer service grids globally.",
     category: "Business",
@@ -1046,11 +1046,11 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
         </div>
       </div>
 
-      {/* Main Split Grid Layout: Widescreen Adaptive Frame */}
+      {/* Main Split Grid Layout: Widescreen Adaptive Frame (EQUAL 50/50 COLUMNS ON DESKTOP) */}
       <main className="flex-1 overflow-hidden flex flex-col md:flex-row">
         
-        {/* Left Pane: Sequential Stream Listings (WIDER AT 520px - 660px) */}
-        <section className="w-full md:w-[520px] lg:w-[580px] xl:w-[660px] flex-shrink-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
+        {/* Left Pane: Sequential Stream Listings (EQUAL WIDTH AT md:w-1/2) */}
+        <section className="w-full md:w-1/2 flex-shrink-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
           <div className="flex-none p-2 bg-slate-950/80 border-b border-slate-900/60 flex justify-between items-center">
             <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider flex items-center gap-1.5">
               <Filter className="w-3 h-3 text-indigo-400" />
@@ -1128,7 +1128,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
                               <span className="font-mono text-[8px]">{src.publishedDate}</span>
                             </div>
                             <div className="flex items-center justify-between gap-1">
-                              <span className="text-slate-500 font-mono text-[8.5px] truncate block max-w-[340px] lg:max-w-[420px] xl:max-w-[480px]">
+                              <span className="text-slate-500 font-mono text-[8.5px] truncate block max-w-[280px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[420px] xl:max-w-[550px]">
                                 {src.link}
                               </span>
                               <button
@@ -1157,8 +1157,8 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
           </div>
         </section>
 
-        {/* Right Pane: Main reading focus area, fills all remaining widescreen monitor space (SHRUNK NATIVELY) */}
-        <section className="flex-1 flex flex-col overflow-hidden bg-slate-900/10">
+        {/* Right Pane: Main reading focus area, fills exactly the other half of widescreen monitor space (md:w-1/2) */}
+        <section className="w-full md:w-1/2 flex flex-col overflow-hidden bg-slate-900/10">
           {selectedStory ? (
             <div className="flex-1 flex flex-col overflow-hidden">
               
