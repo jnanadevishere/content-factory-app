@@ -529,7 +529,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "tech-10",
-    titleTel: "గూగుల్ మ్యాప్స్ లో సరికొత్త హీట్‌веవ్ మ్యాప్స్ అప్‌డేట్",
+    titleTel: "గూగుల్ మ్యాప్స్ లో సరికొత్త హీట్‌వేవ్ మ్యాప్స్ అప్‌డేట్",
     titleEng: "Google Maps Rolls Out Dynamic Heatwave Warning overlays Across South India Grid",
     summaryEng: "Google rolled out a specialized mobile tracking utility today, alerting commuters to extreme local temperature shifts and providing locations of hydration centers dynamically along their routes.",
     category: "Technology",
@@ -621,7 +621,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "wea-8",
-    titleTel: "హైదరాబాద్‌లో వేగంగా పడిపోతున్న భూగర్భ జలాలు: వాటర్ బోర్డు ఆందోళన",
+    titleTel: "హైదరాబాద్‌లో వేగంగా పడిపోతున్న భూగործ జలాలు: వాటర్ బోర్డు ఆందోళన",
     titleEng: "Hyderabad Ground Water Table Drops by 3 Meters; Board Plans Emergency Water supply",
     summaryEng: "The Hyderabad Metropolitan Water Supply board issued conservation advisories today after surveys indicated sharp depletion across western tech corridors, scheduling immediate emergency tanker fleets.",
     category: "Weather",
@@ -777,8 +777,7 @@ const generateDynamicStories = (): Story[] => {
   const now = new Date();
 
   return RAW_STORIES_TEMPLATES.map((story, index) => {
-    // Generate unique rolling timestamps sequentially to guarantee cronological authenticity.
-    // Index 0 represents current time (Just Now). Subsequent indices decrement progressively.
+    // Generate unique rolling timestamps sequentially to guarantee chronological authenticity.
     const minutesToSubtract = index * 14 + Math.floor(Math.random() * 8); 
     const targetTime = new Date(now.getTime() - minutesToSubtract * 60 * 1000);
 
@@ -847,7 +846,7 @@ export default function App() {
       // Sort chronologically (FRESHEST AT THE TOP)
       const sortedPool = [...dynamicPool].sort((a, b) => b.epochTime - a.epochTime);
 
-      // Random Shuffler: Shuffles the deep 62 dynamic pool to secure 30 unique stories on every click
+      // Random Shuffler: Shuffles the deep 60 dynamic pool to secure 30 unique stories on every click
       const shuffled = sortedPool
         .map(value => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
@@ -933,7 +932,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
 
   const filteredStoriesList = useMemo(() => {
     const query = searchTerm.toLowerCase().trim();
-    // Search scans through the entirety of the 60 item master pool to maintain structural integrity
+    // Search scans through the entirety of the master pool to maintain structural integrity
     const dynamicPool = generateDynamicStories();
     const targetSet = query ? dynamicPool : stories;
 
@@ -1050,8 +1049,8 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
       {/* Main Split Grid Layout: Widescreen Adaptive Frame */}
       <main className="flex-1 overflow-hidden flex flex-col md:flex-row">
         
-        {/* Left Pane: Sequential Stream Listings */}
-        <section className="w-full md:w-[380px] lg:w-[420px] xl:w-[480px] flex-shrink-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
+        {/* Left Pane: Sequential Stream Listings (WIDER AT 520px - 660px) */}
+        <section className="w-full md:w-[520px] lg:w-[580px] xl:w-[660px] flex-shrink-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
           <div className="flex-none p-2 bg-slate-950/80 border-b border-slate-900/60 flex justify-between items-center">
             <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider flex items-center gap-1.5">
               <Filter className="w-3 h-3 text-indigo-400" />
@@ -1079,7 +1078,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
                   <div
                     key={story.id}
                     onClick={() => setSelectedStory(story)}
-                    className={`p-2.5 rounded-lg cursor-pointer transition-all duration-150 border relative group ${
+                    className={`p-3 rounded-lg cursor-pointer transition-all duration-150 border relative group ${
                       isSelected 
                         ? isHighImpact 
                           ? "bg-slate-900 border-rose-500/60 shadow-lg shadow-rose-500/10"
@@ -1089,7 +1088,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
                           : "bg-slate-900/20 hover:bg-slate-900/40 border-slate-800/60"
                     }`}
                   >
-                    <div className="flex justify-between items-start gap-1 mb-1">
+                    <div className="flex justify-between items-center gap-1 mb-1.5">
                       <div className="flex items-center gap-1.5">
                         <span className="text-[9px] px-1.5 py-0.5 rounded font-bold tracking-wider uppercase bg-slate-800 text-slate-300 flex items-center gap-1">
                           {getCategoryIcon(story.category)}
@@ -1110,26 +1109,26 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
                       </div>
                     </div>
 
-                    <h3 className="text-slate-200 font-extrabold text-xs leading-snug group-hover:text-white transition-colors mb-1">
+                    <h3 className="text-slate-200 font-extrabold text-sm leading-snug group-hover:text-white transition-colors mb-1">
                       {story.titleEng}
                     </h3>
 
-                    <h4 className="text-amber-400/90 font-medium text-[11px] leading-snug border-t border-slate-800/40 pt-1.5 mb-2 font-telugu">
+                    <h4 className="text-amber-400/90 font-medium text-[12px] leading-snug border-t border-slate-800/40 pt-1.5 mb-2.5 font-telugu">
                       {story.titleTel}
                     </h4>
 
                     {/* Exposing source URLs directly inside the list view cards with copy options */}
-                    <div className="space-y-1 bg-slate-950/70 p-1.5 rounded border border-slate-900/60">
+                    <div className="space-y-1.5 bg-slate-950/70 p-2 rounded border border-slate-900/60">
                       {story.sources.map((src, sIdx) => {
                         const copyId = `card-${story.id}-${sIdx}`;
                         return (
-                          <div key={sIdx} className="text-[10px] leading-tight border-b border-slate-900/40 pb-1 last:border-0 last:pb-0">
+                          <div key={sIdx} className="text-[10px] leading-tight border-b border-slate-900/40 pb-1.5 last:border-0 last:pb-0">
                             <div className="flex justify-between items-center text-[9px] text-slate-400 mb-0.5">
                               <span className="font-semibold text-slate-300">{src.name}</span>
                               <span className="font-mono text-[8px]">{src.publishedDate}</span>
                             </div>
                             <div className="flex items-center justify-between gap-1">
-                              <span className="text-slate-500 font-mono text-[8px] truncate block max-w-[210px]">
+                              <span className="text-slate-500 font-mono text-[8.5px] truncate block max-w-[340px] lg:max-w-[420px] xl:max-w-[480px]">
                                 {src.link}
                               </span>
                               <button
@@ -1158,7 +1157,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
           </div>
         </section>
 
-        {/* Right Pane: Main reading focus area, fills all remaining widescreen monitor space */}
+        {/* Right Pane: Main reading focus area, fills all remaining widescreen monitor space (SHRUNK NATIVELY) */}
         <section className="flex-1 flex flex-col overflow-hidden bg-slate-900/10">
           {selectedStory ? (
             <div className="flex-1 flex flex-col overflow-hidden">
