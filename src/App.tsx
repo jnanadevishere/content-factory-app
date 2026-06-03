@@ -93,7 +93,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తెలంగాణను 3 ట్రిలియన్ డాలర్ల ఆర్థిక వ్యవస్థగా మారుస్తాం: సీఎం రేవంత్ రెడ్డి పిలుపు",
     titleEng: "CM Revanth Reddy Unveils 'Telangana Rising' Development Roadmap",
     summaryEng: "Marking Telangana's Statehood celebrations, Chief Minister A Revanth Reddy outlined an ambitious developmental path. The administration aims to elevate the state to a $1 trillion economy by 2034 and scale up to $3 trillion by 2047, backed by major housing and welfare initiatives.",
-    summaryTel: "తెలంగాణను రాబోయే కాలంలో 3 ట్రిలియన్ డాలర్ల ఆర్థిక వ్యవస్థగా తీర్చిదిద్దడమే లక్ష్యమని సీఎం రేవంత్ రెడ్డి ప్రకటించారు. సంక్షేమ పథకాలు, గృహనిర్మాణం మరియు పారిశ్రామిక అభివృద్ధి ద్వారా ఈ మైలురాయిని చేరుకుంటామని ఆయన వెల్లడించారు.",
+    summaryTel: "తెలంగాణను రాబోయే కాలంలో 3 ట్రిలియన్ డాలర్ల ఆర్థిక వ్యవస్థగా తీర్చిద్దడమే లక్ష్యమని సీఎం రేవంత్ రెడ్డి ప్రకటించారు. సంక్షేమ పథకాలు, గృహనిర్మాణం మరియు పారిశ్రామిక అభివృద్ధి ద్వారా ఈ మైలురాయిని చేరుకుంటామని ఆయన వెల్లడించారు.",
     category: "Politics",
     audienceRate: 91,
     sources: [
@@ -588,7 +588,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "చిట్యాలలో 48.3 డిగ్రీల రికార్డు ఉష్ణోగ్రత: ఏపీ విపత్తుల సంస్థ రెడ్ అలర్ట్",
     titleEng: "APSDMA Sounds Heatwave Emergency as Chityala Smashes Record at 48.3 Degrees",
     summaryEng: "An intense, dangerous heatwave continues to envelop parts of Andhra Pradesh. The state's disaster management agency issued extreme weather red alerts, with Chityala recording today's maximum peak temperature.",
-    summaryTel: "ఆంధ్రప్రదేశ్‌లోని చిట్యాల గ్రామంలో రికార్డు స్థాయిలో 48.3 డిగ్రీల ఉష్ణోగ్రత నమోదైంది. తీవ్రమైన వడగాల్పుల నేపథ్యంలో విపత్తు నిర్వహణ సంస్థ అత్యవసర రెడ్ అలర్ట్ ప్రకటించింది.",
+    summaryTel: "ఆంధ్రప్రదేశ్‌లోని చిట్యాల గ్రామంలో రికార్డు స్థాయిలో 48.3 డిగ్రీల ఉష్ణోగ్రత నమోదైంది. transatlantic వాతావరణ పరిస్థితుల వల్ల తీవ్రమైన వడగాల్పుల నేపథ్యంలో విపత్తు నిర్వహణ సంస్థ అత్యవసర రెడ్ అలర్ట్ ప్రకటించింది.",
     category: "Weather",
     audienceRate: 97,
     sources: [
@@ -660,6 +660,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "పశ్చిమ బెంగాల్ లో హఠాత్తుగా కురిసిన భారీ వర్షాలు: నిలిచిన ప్రజాజీవనం",
     titleEng: "Sudden Thunderstorms and Cloudbursts Halt Daily Life in Sub-Himalayan Bengal",
     summaryEng: "Heavy torrential downpours disrupted road networks in hilly sectors of West Bengal today, prompting immediate evacuation alerts for low-lying village environments prone to minor landslides.",
+    summaryTel: "పశ్చిమ బెంగాల్‌లోని పర్వత ప్రాంతాలలో కురిసిన భారీ వర్షాల కారణంగా రోడ్డు రవాణా నిలిచిపోయింది. కొండచరియలు విరిగిపడే అవకాశం ఉండటంతో లోతట్టు గ్రామ ప్రజలను అధికారులు అప్రమత్తం చేశారు.",
     category: "Weather",
     audienceRate: 71,
     sources: [
@@ -735,7 +736,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ఏపీ-తెలంగాణ హైవేకు ఎన్టీఆర్ పేరు పెట్టాలని పవన్ కళ్యాణ్ ప్రతిపాదన",
     titleEng: "Pawan Kalyan Proposes Naming AP-Telangana Highway After Legend NT Rama Rao",
     summaryEng: "Jana Sena Chief Pawan Kalyan today floated a prominent recommendation to state authorities, urging that the major highway network connecting Andhra Pradesh and Telangana be named in honor of the legendary NT Rama Rao.",
-    summaryTel: "రెండు తెలుగు రాష్ట్రాలను కలిపే జాతీయ రహదారికి స్వర్గీయ నందమూరి తారక రామారావు (ఎన్టీఆర్) పేరు పెట్టాలని జనసేన అధినేత పవన్ కళ్యాణ్ ప్రభుత్వానికి అధికారికంగా ప్రతిపాదించారు.",
+    summaryTel: "రెండు తెలుగు రాష్ట్రాలను కలిపే జాతీయ రహదారికి స్వర్గీయ నందమూరి తారక రామారావు (ఎన్టీఆర్) పేరు పెట్టాలని జాతీయ రహదారుల ప్రాధికార సంస్థకు జనసేన అధినేత పవన్ కళ్యాణ్ ప్రతిపాదించారు.",
     category: "Regional",
     audienceRate: 95,
     sources: [
@@ -783,7 +784,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తిరుమల కొండపై ఎండల దృష్ట్యా ప్రత్యేక వసతులు కల్పించిన టీటీడీ",
     titleEng: "Tirumala TTD Deploys Shaded Footpaths and Cool-Gel Paint coatings for Summer Rush",
     summaryEng: "Tirumala temple authorities finished painting key queue lanes with heat-reflecting technology today, ensuring thousands of barefoot devotees are protected from high path temperatures during peak hours.",
-    summaryTel: "తిరుమల శ్రీవారి దర్శనార్థం వచ్చే భక్తుల కోసం టీటీడీ ప్రత్యేక ఏర్పాట్లు చేసింది. ఎండ తీవ్రత దృష్ట్యా నడక దారులలో కూల్ పెయింటింగ్ వేసి నీడను అందించే తాత్కాలిక షెడ్లను ఏర్పాటు చేశారు.",
+    summaryTel: "తిరుమల శ్రీవారి दर्शनార్థం వచ్చే భక్తుల కోసం టీటీడీ ప్రత్యేక ఏర్పాట్లు చేసింది. ఎండ తీవ్రత దృష్ట్యా నడక దారులలో కూల్ పెయింటింగ్ వేసి నీడను అందించే తాత్కాలిక షెడ్లను ఏర్పాటు చేశారు.",
     category: "Regional",
     audienceRate: 91,
     sources: [
