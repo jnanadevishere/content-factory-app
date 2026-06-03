@@ -955,7 +955,7 @@ export default function App() {
     }, 1500);
   };
 
-  const handleLaunchGemini = (story: Story | null) => {
+  const handleLaunchGemini = (story: Story | null, mode: "content" | "shorts") => {
     if (!story) return;
 
     const basePrompt = `System Guidance: Content Creator Agent
@@ -972,7 +972,12 @@ Actionable Request:
 Using the custom Gem parameters, generate high-impact media copy, localized Telugu summaries, and engaging social posts. Align all statements strictly with the provided source reference links.`;
 
     const encodedPrompt = encodeURIComponent(basePrompt);
-    const targetGemUrl = `https://gemini.google.com/gem/1Bad-9bFYlSJ95MToqLeSuZZXtgp1DoHg?usp=sharing&prompt=${encodedPrompt}`;
+    
+    // Choose destination Gem URL depending on user's action
+    const targetGemUrl = mode === "content"
+      ? `https://gemini.google.com/gem/1Bad-9bFYlSJ95MToqLeSuZZXtgp1DoHg?usp=sharing&prompt=${encodedPrompt}`
+      : `https://gemini.google.com/gem/1WTODyaX834kRDfZ0E-fKqPcWqYnBMnue?usp=sharing&prompt=${encodedPrompt}`;
+
     window.open(targetGemUrl, "_blank");
   };
 
@@ -1327,24 +1332,34 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
 
                 {/* Dedicated Gemini Write Now Button Integration */}
                 <div className="pt-3 border-t border-slate-800/80">
-                  <div className="bg-gradient-to-r from-indigo-950/20 to-blue-950/20 border border-indigo-500/10 rounded-lg p-3.5 flex justify-between items-center gap-3">
-                    <div className="space-y-0.5">
+                  <div className="bg-gradient-to-r from-indigo-950/20 to-blue-950/20 border border-indigo-500/10 rounded-lg p-3.5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div className="space-y-0.5 flex-1">
                       <h4 className="text-xs font-bold text-indigo-300 flex items-center gap-1">
                         <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
                         AI Generation Engine
                       </h4>
                       <p className="text-[10px] text-slate-400">
-                        Launch this verified story and source links directly into your custom Gem.
+                        Launch this verified story and source links directly into your custom Gem templates.
                       </p>
                     </div>
 
-                    <button
-                      onClick={() => handleLaunchGemini(selectedStory)}
-                      className="bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-400 hover:to-rose-400 text-slate-950 font-extrabold text-xs tracking-wider px-5 py-2.5 rounded shadow-md flex items-center justify-center gap-1.5 transition-all transform active:scale-95 flex-shrink-0 cursor-pointer"
-                    >
-                      Write Now
-                      <ChevronRight className="w-3.5 h-3.5 text-slate-950 stroke-[3]" />
-                    </button>
+                    <div className="flex flex-col gap-2 w-full sm:w-auto">
+                      <button
+                        onClick={() => handleLaunchGemini(selectedStory, "content")}
+                        className="w-full sm:w-auto bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-400 hover:to-rose-400 text-slate-950 font-extrabold text-xs tracking-wider px-5 py-2.5 rounded shadow-md flex items-center justify-center gap-1.5 transition-all transform active:scale-95 cursor-pointer"
+                      >
+                        Content write up
+                        <ChevronRight className="w-3.5 h-3.5 text-slate-950 stroke-[3]" />
+                      </button>
+
+                      <button
+                        onClick={() => handleLaunchGemini(selectedStory, "shorts")}
+                        className="w-full sm:w-auto bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-extrabold text-xs tracking-wider px-5 py-2.5 rounded shadow-md flex items-center justify-center gap-1.5 transition-all transform active:scale-95 cursor-pointer"
+                      >
+                        Shorts write up
+                        <ChevronRight className="w-3.5 h-3.5 text-white stroke-[3]" />
+                      </button>
+                    </div>
                   </div>
                 </div>
 
