@@ -33,11 +33,12 @@ interface Story {
   titleTel: string;
   titleEng: string;
   summaryEng: string;
+  summaryTel: string;
   category: string;
   date: string;
   hour: string;
   epochTime: number;
-  audienceRate: number; // Percentage engagement score
+  audienceRate: number;
   sources: Source[];
 }
 
@@ -46,12 +47,12 @@ interface RawTemplate {
   titleTel: string;
   titleEng: string;
   summaryEng: string;
+  summaryTel: string;
   category: string;
   audienceRate: number;
   sources: { name: string; link: string }[];
 }
 
-// Helper to get formatted current dates dynamically
 const getFormattedCurrentDate = () => {
   const now = new Date();
   return now.toLocaleDateString("en-US", {
@@ -79,6 +80,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తెలంగాణ అడ్వకేట్స్ ప్రొటెక్షన్ యాక్ట్ నేటి నుంచి అమలులోకి",
     titleEng: "Telangana Advocates Protection Act Comes into Force with State Notification",
     summaryEng: "The Telangana government has officially notified that the landmark Advocates Protection Act is active starting today. The legislation protects legal practitioners from threats, physical violence, harassment, and malicious false implications during professional duties.",
+    summaryTel: "తెలంగాణ రాష్ట్రంలో న్యాయవాదుల రక్షణ కోసం ప్రభుత్వం ప్రతిష్టాత్మకంగా అడ్వకేట్స్ ప్రొటెక్షన్ యాక్ట్‌ను అధికారికంగా నోటిఫై చేసింది. ఈ చట్టం ప్రకారం విధుల్లో ఉన్న లాయర్లపై దాడులు, బెదిరింపులు, మరియు తప్పుడు ఆరోపణలు చేసే వారిపై కఠిన చర్యలు తీసుకుంటారు.",
     category: "Politics",
     audienceRate: 94,
     sources: [
@@ -91,6 +93,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తెలంగాణను 3 ట్రిలియన్ డాలర్ల ఆర్థిక వ్యవస్థగా మారుస్తాం: సీఎం రేవంత్ రెడ్డి పిలుపు",
     titleEng: "CM Revanth Reddy Unveils 'Telangana Rising' Development Roadmap",
     summaryEng: "Marking Telangana's Statehood celebrations, Chief Minister A Revanth Reddy outlined an ambitious developmental path. The administration aims to elevate the state to a $1 trillion economy by 2034 and scale up to $3 trillion by 2047, backed by major housing and welfare initiatives.",
+    summaryTel: "తెలంగాణను రాబోయే కాలంలో 3 ట్రిలియన్ డాలర్ల ఆర్థిక వ్యవస్థగా తీర్చిదిద్దడమే లక్ష్యమని సీఎం రేవంత్ రెడ్డి ప్రకటించారు. సంక్షేమ పథకాలు, గృహనిర్మాణం మరియు పారిశ్రామిక అభివృద్ధి ద్వారా ఈ మైలురాయిని చేరుకుంటామని ఆయన వెల్లడించారు.",
     category: "Politics",
     audienceRate: 91,
     sources: [
@@ -103,6 +106,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తెలంగాణ ప్రజలకు ప్రధాని నరేంద్ర మోదీ ఆవిర్భావ దినోత్సవ శుభాకాంక్షలు",
     titleEng: "PM Narendra Modi Congratulates Telangana Citizens on Statehood Day",
     summaryEng: "Prime Minister Narendra Modi sent his wishes to the residents of Telangana, applauding their courage, innovation, and vibrant culture. He reaffirmed the Center's commitment to supporting the state's growth trajectory towards realizing 'Viksit Bharat'.",
+    summaryTel: "తెలంగాణ రాష్ట్ర అవతరణ దినోత్సవం సందర్భంగా ప్రధాని నరేంద్ర మోదీ రాష్ట్ర ప్రజలకు ప్రత్యేక శుభాకాంక్షలు తెలిపారు. తెలంగాణ సంస్కృతి, ఆవిష్కరణలను కొనియాడుతూ, వికసిత్ భారత్ నిర్మాణంలో రాష్ట్ర పాత్ర కీలకమని ప్రధాని పేర్కొన్నారు.",
     category: "Politics",
     audienceRate: 88,
     sources: [
@@ -112,9 +116,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "pol-4",
-    titleTel: "హైదరాబాద్‌లో జనసేన సభ రద్దు: జూబ్లీహిల్స్ నివాసంలో పవన్ కళ్యాణ్ ప్రెస్ మీట్",
+    titleTel: "హైదరాబాద్‌లో జనసేన సభ రద్దు: జూబ్లీహిల్స్ నివాసంలో ప్రెస్ మీట్",
     titleEng: "Cyberabad Police Deny JSP Gachibowli Meeting; Pawan Kalyan Initiates Jubilee Hills Address",
     summaryEng: "After Cyberabad authorities declined permissions for a major JSP convention in Gachibowli today, Deputy CM Pawan Kalyan addressed regional leaders and media representatives from his Jubilee Hills residence, criticizing political roadblocks.",
+    summaryTel: "గచ్చిబౌలిలో జనసేన సభకు పోలీసులు అనుమతి నిరాకరించడంతో, డిప్యూటీ సీఎం పవన్ కళ్యాణ్ జూబ్లీహిల్స్ లోని తన నివాసం నుండి నాయకులను ఉద్దేశించి మాట్లాడారు. రాజకీయ అడ్డంకులను ఎదుర్కొని ముందుకు సాగుతామని ఆయన పిలుపునిచ్చారు.",
     category: "Politics",
     audienceRate: 96,
     sources: [
@@ -127,6 +132,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "కేంద్ర ప్రభుత్వం 'యాంటీ-వెపనైజేషన్' నిధుల ఉపసంహరణకు సిద్ధం",
     titleEng: "White House Set to Scrap $1.776 Billion controversial 'Anti-Weaponization' Fund",
     summaryEng: "The US administration today plans to drop its controversial $1.776 billion anti-weaponization fund, calling it a political distraction following a temporary block issued by a Virginia court order.",
+    summaryTel: "వివాదాస్పద 'యాంటీ-వెపనైజేషన్' నిధుల ఉపసంహరణకు వైట్ హౌస్ సిద్ధమైంది. వర్జీనియా కోర్టు ఆదేశాల అనంతరం, 1.776 బిలియన్ డాలర్ల విలువైన ఈ నిధులను రద్దు చేయాలని నిర్ణయించారు.",
     category: "Politics",
     audienceRate: 72,
     sources: [
@@ -139,6 +145,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ఢిల్లీ తెలంగాణ భవన్‌లో ఘనంగా ఆవిర్భావ దినోత్సవ వేడుకలు",
     titleEng: "Kishan Reddy Garlands B.R. Ambedkar Statue as BJP Celebrates Telangana Day in New Delhi",
     summaryEng: "Union Minister G. Kishan Reddy and BJP National President Nitin Nabin led colorful Telangana Formation Day celebrations at Telangana Bhavan in New Delhi today, hosting multiple traditional regional performances.",
+    summaryTel: "ఢిల్లీలోని తెలంగాణ భవన్‌లో రాష్ట్ర అవతరణ దినోత్సవ వేడుకలు ఘనంగా జరిగాయి. కేంద్ర మంత్రి కిషన్ రెడ్డి మరియు బీజేపీ జాతీయ అధ్యక్షుడు నితిన్ నబిన్ పాల్గొని, సాంప్రదాయ సాంస్కృతిక ప్రదర్శనలను పర్యవేక్షించారు.",
     category: "Politics",
     audienceRate: 85,
     sources: [
@@ -150,6 +157,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "జమ్మూకశ్మీర్‌పై ఐరోపా సమాఖ్య-పాకిస్థాన్ ఉమ్మడి వ్యాఖ్యలను తిరస్కరించిన భారత్",
     titleEng: "India's MEA Outright Rejects EU-Pakistan Reference to Jammu & Kashmir",
     summaryEng: "The Ministry of External Affairs today rebuffed attempts by foreign bodies to comment on Jammu & Kashmir, reminding global platforms that third parties have absolutely zero locus standi on India's sovereign bilateral issues.",
+    summaryTel: "జమ్మూకాశ్మీర్‌పై ఐరోపా సమాఖ్య మరియు పాకిస్థాన్ చేసిన ఉమ్మడి వ్యాఖ్యలను భారత్ తీవ్రంగా ఖండించింది. ఈ విషయంలో మూడో పక్షానికి జోక్యం చేసుకునే హక్కు లేదని విదేశీ వ్యవహారాల మంత్రిత్వ శాఖ స్పష్టం చేసింది.",
     category: "Politics",
     audienceRate: 79,
     sources: [
@@ -161,6 +169,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "వెనిజులా తాత్కాలిక అధ్యక్షురాలు డెల్సీ రోడ్రిగ్జ్ రేపటి నుంచి భారత్ పర్యటన",
     titleEng: "Venezuela's Acting President Delcy Rodríguez Set for Crucial 5-Day India Visit",
     summaryEng: "Venezuela's top diplomatic delegation led by Acting President Delcy Rodríguez arrives in New Delhi tomorrow. High-level discussions focusing on bilateral trade mechanisms, energy security, and oil supply will be on the table.",
+    summaryTel: "వెనిజులా తాత్కాలిక అధ్యక్షురాలు డెల్సీ రోడ్రిగ్జ్ 5 రోజుల భారత పర్యటనకు విచేస్తున్నారు. ఇరు దేశాల మధ్య ద్వైపాక్షిక వాణిజ్యం, ఇంధన భద్రత మరియు చమురు సరఫరాపై ఉన్నత స్థాయి చర్చలు జరగనున్నాయి.",
     category: "Politics",
     audienceRate: 64,
     sources: [
@@ -172,6 +181,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "బెంగాల్‌లో టీఎంసీపై నిషేధం విధించాలని బీజేపీ డిమాండ్",
     titleEng: "Bengal BJP Leaders Seek Complete Ban on TMC Following Escalated Pre-Poll Violences",
     summaryEng: "Citing recurring law and order concerns, state ministers representing the BJP formally petitioned union platforms today, demanding structural evaluations and severe bans on the Trinamool Congress (TMC).",
+    summaryTel: "పశ్చిమ బెంగాల్‌లో ఎన్నికల హింస నేపథ్యంలో తృణమూల్ కాంగ్రెస్ (టీఎంసీ) పార్టీని నిషేధించాలని బీజేపీ నేతలు డిమాండ్ చేశారు. ఈ మేరకు కేంద్ర ప్రభుత్వానికి వారు అధికారికంగా వినతిపత్రం సమర్పించారు.",
     category: "Politics",
     audienceRate: 82,
     sources: [
@@ -183,6 +193,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "కోల్‌కతాలో మమతా బెనర్జీ భారీ ధర్నా: కేంద్ర వైఖరిపై నిప్పులు చేరిగిన సీఎం",
     titleEng: "TMC Supremo Mamata Banerjee Launches Sit-In Protest Against Political Intimidations",
     summaryEng: "West Bengal Chief Minister Mamata Banerjee initiated a highly publicized silent sit-in in Kolkata today, accusing central agencies of orchestrating deliberate harassments against key state politicians.",
+    summaryTel: "కేంద్ర దర్యాప్తు సంస్థల ఏకపక్ష ధోరణి మరియు రాజకీయ వేధింపులకు నిరసనగా బెంగాల్ సీఎం మమతా బెనర్జీ కోల్‌కతాలో భారీ ధర్నా చేపట్టారు. తమ పార్టీ నేతలను లక్ష్యంగా చేసుకుని వేధిస్తున్నారని ఆమె ఆరోపించారు.",
     category: "Politics",
     audienceRate: 89,
     sources: [
@@ -195,9 +206,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   // ----------------------------------------
   {
     id: "ent-1",
-    titleTel: "రామ్ చరణ్ 'పెద్ది' జూన్ 4న గ్రాండ్ రిలీజ్: బుచ్చిబాబు మరియు జాన్వీ కపూర్ ప్రమోషన్స్",
-    titleEng: "Ram Charan's 'Peddi' Set for Huge Theatrical Release on June 4; Promos Peak in Hyderabad",
-    summaryEng: "The sports action drama 'Peddi' starring Ram Charan and Bollywood actress Janhvi Kapoor is locked for a grand release on June 4. Director Buchi Babu Sana expressed great confidence during final promotions today, stating it will set a new benchmark for sports cinema.",
+    titleTel: "రామ్ చరణ్ 'పెద్ది' జూన్ 4న గ్రాండ్ రిలీజ్: ప్రమోషన్స్ జోరు",
+    titleEng: "Ram Charan's 'Peddi' Set for Huge Theatrical Release; Promos Peak in Hyderabad",
+    summaryEng: "The sports action drama 'Peddi' starring Ram Charan and Bollywood actress Janhvi Kapoor is locked for a grand release. Director Buchi Babu Sana expressed great confidence during final promotions today, stating it will set a new benchmark for sports cinema.",
+    summaryTel: "రామ్ చరణ్, జాన్వీ కపూర్ జంటగా బుచ్చిబాబు సానా దర్శకత్వంలో తెరకెక్కిన క్రీడా నేపథ్యంలో సాగే యాక్షన్ చిత్రం 'పెద్ది' విడుదలకు సిద్ధమైంది. ప్రచార కార్యక్రమాలు హైదరాబాద్ లో జోరందుకున్నాయి.",
     category: "Entertainment",
     audienceRate: 98,
     sources: [
@@ -210,6 +222,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "పుష్ప 2 ది రూల్: హైదరాబాద్‌లో భారీ డబ్బింగ్ షెడ్యూల్ ప్రారంభించిన అల్లు అర్జున్",
     titleEng: "Pushpa 2 The Rule: Allu Arjun Commences Crucial Final Dubbing Phase in Hyderabad",
     summaryEng: "Icon Star Allu Arjun entered a premium recording studio in Jubilee Hills today to start his final dialog syncs for 'Pushpa 2: The Rule.' Director Sukumar is concurrently handling VFX integrations in Mumbai.",
+    summaryTel: "ఐకాన్ స్టార్ అల్లు అర్జున్ మోస్ట్ అవేటెడ్ సీక్వెల్ 'పుష్ప 2' కోసం జూబ్లీహిల్స్ లోని స్టూడియోలో ఫైనల్ డబ్బింగ్ పనులను ప్రారంభించారు. డైరెక్టర్ సుకుమార్ ఈ సినిమాను గ్రాండ్‌గా తెరకెక్కిస్తున్నారు.",
     category: "Entertainment",
     audienceRate: 97,
     sources: [
@@ -219,9 +232,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "ent-3",
-    titleTel: "అఖిల్ అక్కినేని 'లెనిన్' జూన్ 26న విడుదల: సీమ బ్యాక్‌డ్రాప్‌లో మురళీ కిశోర్ అబ్బూరు మూవీ",
-    titleEng: "Akhil Akkineni's 'Lenin' Locked for June 26 Release; Co-starring Bhagyashri Borse",
-    summaryEng: "Akhil Akkineni's highly anticipated action drama 'Lenin' is officially scheduled to release on June 26. Directed by Murali Kishore Abburu of Vinaro Bhagyamu Vishnu Katha fame, the movie features Bhagyashri Borse as the female lead and is set in Rayalaseema.",
+    titleTel: "అఖిల్ అక్కినేని 'లెనిన్' విడుదల తేదీ ఖరారు: సీమ బ్యాక్‌డ్రాప్‌లో మూవీ",
+    titleEng: "Akhil Akkineni's 'Lenin' Locked for Release; Co-starring Bhagyashri Borse",
+    summaryEng: "Akhil Akkineni's highly anticipated action drama 'Lenin' is officially scheduled to release. Directed by Murali Kishore Abburu of Vinaro Bhagyamu Vishnu Katha fame, the movie features Bhagyashri Borse as the female lead and is set in Rayalaseema.",
+    summaryTel: "అఖిల్ అక్కినేని హీరోగా రాయలసీమ నేపథ్యంలో రూపొందుతున్న భారీ యాక్షన్ చిత్రం 'లెనిన్' విడుదల తేదీ ఖరారైంది. భాగ్యశ్రీ బోర్సే కథానాయికగా నటిస్తున్న ఈ సినిమాకు మురళీ కిశోర్ దర్శకుడు.",
     category: "Entertainment",
     audienceRate: 91,
     sources: [
@@ -231,9 +245,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "ent-4",
-    titleTel: "సమంత 'మా ఇంటి బంగారం' జూన్ 19న విడుదల: నందిని రెడ్డి దర్శకత్వం",
-    titleEng: "Samantha's 'Maa Inti Bangaram' Set for June 19 Release; Written by Raj Nidimoru",
-    summaryEng: "Samantha Ruth Prabhu's first project after a brief hiatus, 'Maa Inti Bangaram', has finalized its release date as June 19. Directed by Nandini Reddy and written by Raj Nidimoru, the film has generated huge buzz with its high-quality promotional trailers.",
+    titleTel: "సమంత 'మా ఇంటి బంగారం' విడుదల: నందిని రెడ్డి దర్శకత్వం",
+    titleEng: "Samantha's 'Maa Inti Bangaram' Set for Release; Written by Raj Nidimoru",
+    summaryEng: "Samantha Ruth Prabhu's first project after a brief hiatus, 'Maa Inti Bangaram', has finalized its release date. Directed by Nandini Reddy and written by Raj Nidimoru, the film has generated huge buzz with its high-quality promotional trailers.",
+    summaryTel: "సమంత లీడ్ రోల్‌లో నటిస్తున్న ఫ్యామిలీ డ్రామా 'మా ఇంటి బంగారం' షూటింగ్ ముగించుకుని విడుదలకు సిద్ధమైంది. నందిని రెడ్డి దర్శకత్వంలో వస్తున్న ఈ సినిమాపై ఇండస్ట్రీలో మంచి అంచనాలు ఉన్నాయి.",
     category: "Entertainment",
     audienceRate: 93,
     sources: [
@@ -246,6 +261,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "గేమ్ ఛేంజర్ కొత్త సాంగ్ షూట్: శంకర్ పర్యవేక్షణలో భారీ సెట్ పూర్తి",
     titleEng: "Director Shankar Mounts Massive Musical Set in Hyderabad for 'Game Changer'",
     summaryEng: "Acclaimed filmmaker Shankar began a grand high-budget visual song schedule featuring Ram Charan and Kiara Advani today. A vast, modern set was custom-built at the Aluminium Factory location.",
+    summaryTel: "గ్లోబల్ స్టార్ రామ్ చరణ్ ప్రధాన పాత్రలో శంకర్ దర్శకత్వంలో రూపుదిద్దుకుంటున్న 'గేమ్ ఛేంజర్' సాంగ్ షూటింగ్ కోసం అల్యూమినియం ఫ్యాక్టరీ వద్ద అద్భుతమైన భారీ సెట్ నిర్మించారు.",
     category: "Entertainment",
     audienceRate: 95,
     sources: [
@@ -258,6 +274,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "రాజమౌళి - మహేష్ బాబు SSMB29: జర్మనీ వర్క్‌షాప్ పూర్తి, త్వరలో అఫీషియల్ అప్‌డేట్",
     titleEng: "SS Rajamouli & Mahesh Babu's SSMB29 Finishes Extensive Germany Workshop Phase",
     summaryEng: "Superstar Mahesh Babu and visionary director SS Rajamouli's massive action-adventure SSMB29 is concluding its preliminary training schedules in Germany. An official announcement regarding the regular shoot timeline is expected by mid-June.",
+    summaryTel: "సూపర్ స్టార్ మహేష్ బాబు, ఎస్.ఎస్. రాజమౌళి ప్రతిష్టాత్మక ప్రాజెక్ట్ 'SSMB29' కి సంబంధించిన కీలక ప్రీ-ప్రొడక్షన్ వర్క్‌షాప్ జర్మనీలో పూర్తయింది. త్వరలో షూటింగ్ షెడ్యూల్స్ ప్రకటిస్తారు.",
     category: "Entertainment",
     audienceRate: 99,
     sources: [
@@ -270,6 +287,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ప్రభాస్ - సందీప్ రెడ్డి వంగా 'స్పిరిట్' మ్యూజిక్ సెషన్స్ ప్రారంభం",
     titleEng: "Prabhas and Sandeep Reddy Vanga's 'Spirit' Starts Music Sessions in Mumbai",
     summaryEng: "Rebel Star Prabhas' next high-voltage cop action thriller 'Spirit' directed by Sandeep Reddy Vanga has officially commenced its musical compositions in Mumbai. The team is aiming to complete pre-production by August.",
+    summaryTel: "రెబల్ స్టార్ ప్రభాస్ హీరోగా వైల్డ్ డైరెక్టర్ సందీప్ రెడ్డి వంగా కాంబినేషన్‌లో వస్తున్న 'స్పిరిట్' మూవీ మ్యూజిక్ కంపోజిషన్స్ ముంబైలో ప్రారంభమయ్యాయి. హర్షవర్ధన్ రామేశ్వర్ అద్భుతమైన ట్యూన్స్ సిద్ధం చేస్తున్నారు.",
     category: "Entertainment",
     audienceRate: 96,
     sources: [
@@ -282,6 +300,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "జూనియర్ ఎన్టీఆర్ 'దేవర: పార్ట్ 2' స్క్రిప్ట్ లాక్ చేసిన కొరటాల శివ",
     titleEng: "Director Koratala Siva Locks Script and Conceptual VFX Outlines for 'Devara: Part 2'",
     summaryEng: "Young Tiger NTR's coastal action epic 'Devara: Part 2' has reached an important milestone. Director Koratala Siva has reportedly completed the script lock and approved pre-visualization drafts for heavy ocean-action sequences.",
+    summaryTel: "యంగ్ టైగర్ ఎన్టీఆర్ 'దేవర 1' ఘనవిజయం సాధించడంతో, దర్శకుడు కొరటాల శివ పార్ట్-2 స్క్రిప్ట్‌కు తుది రూపం ఇచ్చారు. ఈసారి సముద్రపు పోరాట దృశ్యాలు విజువల్ వండర్‌గా ఉంటాయని టాక్.",
     category: "Entertainment",
     audienceRate: 94,
     sources: [
@@ -293,6 +312,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "మెగాస్టార్ చిరంజీవి 'విశ్వంభర' తుది డబ్బింగ్ పనులు రేపటి నుండి షురూ",
     titleEng: "Megastar Chiranjeevi's Fantasy Adventure 'Vishwambhara' Starts Final Post-Production",
     summaryEng: "Vassishtha's fantasy thriller 'Vishwambhara' starring Megastar Chiranjeevi is transitioning into its post-production phase. Sound mixing and final dubbing sessions are scheduled to begin at Prasad Labs starting tomorrow.",
+    summaryTel: "మెగాస్టార్ చిరంజీవి సోషియో ఫాంటసీ అడ్వెంచర్ 'విశ్వంభర' పోస్ట్-ప్రొడక్షన్ పనుల్లో వేగం పెంచింది. చిరంజీవి డబ్బింగ్ పనులు ప్రసాద్ ల్యాబ్స్ లో రేపటి నుండి ప్రారంభం కానున్నాయి.",
     category: "Entertainment",
     audienceRate: 92,
     sources: [
@@ -304,6 +324,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "గుండెనిండా గుడిగంటలు నేటి ఎపిసోడ్: రోహిణి మలేషియా ప్లాన్ రద్దు, బాలు అనుమానం",
     titleEng: "Gundeninda Gudigantalu Today's Episode: Rohini Halts Malaysia Trip; Balu Closes In",
     summaryEng: "In today's highly dramatic episode of Star Maa's 'Gundeninda Gudigantalu', Rohini plays a deceitful card to cancel the highly anticipated Malaysia trip, sparking sharp suspicion from Balu while Manoj remains clueless.",
+    summaryTel: "బుల్లితెర టాప్ రేటింగ్ సీరియల్ 'గుండెనిండా గుడిగంటలు' నేటి ఎపిసోడ్ లో ఊహించని ట్విస్ట్ చోటుచేసుకుంది. రోహిణి తప్పుడు కారణాలు చెప్పి విదేశీ ప్రయాణం రద్దు చేసుకోవడంపై బాలుకు అనుమానం పెరిగింది.",
     category: "Entertainment",
     audienceRate: 86,
     sources: [
@@ -319,6 +340,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "కమర్షియల్ ఎల్‌పీజీ సిలిండర్ ధర రూ.42 పెరిగింది: నేటి నుంచి కొత్త రేట్లు అమలు",
     titleEng: "Commercial LPG Cylinder Price Hiked by Rs 42 Across Major Indian Metros",
     summaryEng: "Oil Marketing Companies (OMCs) have increased the prices of 19 kg commercial cylinders by Rs 42. The price adjustment, effective today, affects restaurant bills, while domestic 14.2 kg LPG cylinder rates remain unchanged.",
+    summaryTel: "వ్యాపార వినియోగదారులకు గట్టి షాక్ తగిలింది. కమర్షియల్ ఎల్‌పీజీ సిలిండర్ ధరను ఆయిల్ కంపెనీలు రూ. 42 పెంచాయి. సవరించిన ధరలు ఈరోజు నుంచే అమలులోకి రానున్నాయి. గృహ అవసరాల సిలిండర్ ధరలో మార్పు లేదు.",
     category: "Business",
     audienceRate: 75,
     sources: [
@@ -330,6 +352,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "బంగారం ధరల సరికొత్త రికార్డు: ఫ్యూచర్స్ మార్కెట్లో భారీగా పెరిగిన రేట్లు",
     titleEng: "Gold Futures Rally Heavily as Geopolitical Tension Fuels Safe-Haven Trading",
     summaryEng: "Precious metals experienced aggressive demand during early market trading hours today. Global economic changes and inflation hedges continue driving investors toward commodities.",
+    summaryTel: "అంతర్జాతీయ మార్కెట్లలో భౌగోళిక రాజకీయ ఉద్రిక్తతల కారణంగా పసిడి ధరలు సరికొత్త రికార్డులను సృష్టించాయి. సురక్షిత పెట్టుబడిగా భావించే బంగారం వైపు ఇన్వెస్టర్లు మొగ్గుచూపడంతో ధరలు భారీగా పెరిగాయి.",
     category: "Business",
     audienceRate: 91,
     sources: [
@@ -341,6 +364,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ఈరోజు లాభాల్లో ముగిసిన షేర్ మార్కెట్లు: 84 వేలు దాటిన సెన్సెక్స్",
     titleEng: "Indian Equity Benchmarks Rally; Sensex Comfortably Retakes Strategic Heights Today",
     summaryEng: "Strong institutional buying from foreign banking pools sent local indices to historic highs during afternoon sessions today, backed by notable gains across major technology and state-run enterprise shares.",
+    summaryTel: "భారతీయ స్టాక్ మార్కెట్లు నేడు భారీ లాభాలతో ముగిశాయి. ఐటీ, బ్యాంకింగ్ రంగ షేర్లలో విదేశీ ఇన్వెస్టర్లు పెద్ద ఎత్తున కొనుగోళ్లు జరపడంతో సెన్సెక్స్ 84,000 మార్కును విజయవంతంగా దాటింది.",
     category: "Business",
     audienceRate: 90,
     sources: [
@@ -352,6 +376,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ముంబై సహా గుజరాత్‌లో 20 చోట్ల ఈడీ ఏకకాలంలో సోదాలు",
     titleEng: "Enforcement Directorate Raids 20 Strategic Locations in Money Laundering Probe",
     summaryEng: "Federal investigators from the Enforcement Directorate launched surprise inspections across Mumbai and various sectors of Gujarat today, targeting shell enterprises linked to illegal international financial transfers.",
+    summaryTel: "మనీ లాండరింగ్ నిరోధక చట్టం కింద ఎన్‌ఫోర్స్‌మెంట్ డైరెక్టరేట్ (ఈడీ) అధికారులు ముంబై, గుజరాత్‌లోని సుమారు 20 కీలక ప్రాంతాల్లో ఆకస్మిక సోదాలు నిర్వహించారు. హవాలా లావాదేవీలకు సంబంధించిన పత్రాలను స్వాధీనం చేసుకున్నారు.",
     category: "Business",
     audienceRate: 88,
     sources: [
@@ -363,6 +388,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "సింగరేణి బొగ్గు ఉత్పత్తి పెంపు: నూతన ప్లాంట్ శంకుస్థాపనకు గ్రీన్ సిగ్నల్",
     titleEng: "SCCL Obtains Critical Environmental Authorization for Coal Output Expansion",
     summaryEng: "Singareni Collieries Company Limited (SCCL) secured formal environment clearance today. The clearance clears the path to deploy specialized modern heavy extraction machinery across major open-cast sectors.",
+    summaryTel: "సింగరేణి సంస్థకు పర్యావరణ శాఖ నుంచి కీలక అనుమతి లభించింది. ఓపెన్ కాస్ట్ ప్రాజెక్టులలో అధునాతన యంత్రాలను ఉపయోగించి బొగ్గు ఉత్పత్తిని పెంచేందుకు ఈ అనుమతులు దోహదపడనున్నాయి.",
     category: "Business",
     audienceRate: 74,
     sources: [
@@ -371,9 +397,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "bus-6",
-    titleTel: "భోపాల్ మాజీ ఎక్సైజ్ అధికారి రూ. 18.20 కోట్ల విలువైన ఆస్తులను జప్తు చేసిన ఈడీ",
+    titleTel: "భోపాల్ మాజీ ఎక్సైజ్ అధికారి ఆస్తులను జప్తు చేసిన ఈడీ",
     titleEng: "ED Provisional Attachments Totaling Rs 18.20 Crore Linked to MP Excise Officer",
     summaryEng: "The Bhopal Zonal Office of the Enforcement Directorate today attached extensive real estate assets and bank balances belonging to Dharmendra Singh Bhadauria under active money laundering charges.",
+    summaryTel: "అక్రమ ఆస్తుల కేసులో భోపాల్‌కు చెందిన మాజీ ఎక్సైజ్ అధికారి ధర్మేంద్ర సింగ్ కి సంబంధించిన రూ. 18.20 కోట్ల విలువైన ఆస్తులను ఈడీ అధికారులు తాత్కాలికంగా జప్తు చేశారు.",
     category: "Business",
     audienceRate: 61,
     sources: [
@@ -382,9 +409,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "bus-7",
-    titleTel: "దేశవ్యాప్టానికి స్థిరంగా ఉన్న పెట్రోల్, డీజిల్ ధరలు: హైదరాబాద్‌లో లీటర్ రూ.115.62",
+    titleTel: "దేశవ్యాప్టానికి స్థిరంగా ఉన్న పెట్రోల్, డీజిల్ ధరలు: హైదరాబాద్‌లో స్థిరంగా లీటర్ ధర",
     titleEng: "Petrol and Diesel Prices Remain Firmly Stable Across Major Metro Locations",
     summaryEng: "State-run oil marketing giants maintained stable fuel prices today. Retail charts show Delhi pricing petrol at Rs 102.12, while Hyderabad consumers continue to see stable rates holding at Rs 115.62 per liter.",
+    summaryTel: "దేశవ్యాప్తంగా చమురు కంపెనీలు పెట్రోల్, డీజిల్ ధరలను స్థిరంగా ఉంచాయి. హైదరాబాద్ లో లీటర్ పెట్రోల్ ధర రూ. 115.62 వద్ద కొనసాగుతుండగా, సామాన్యులకు కొంత ఊరట లభించినట్లయింది.",
     category: "Business",
     audienceRate: 83,
     sources: [
@@ -396,6 +424,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "సహకార బ్యాంకుల్లో సైబర్ భద్రతను పటిష్టం చేయాలని ఆర్బీఐ తాజా ఆదేశాలు",
     titleEng: "RBI Directs Cooperative Banks to Tighten Online Security Against Phishing Hooks",
     summaryEng: "The Reserve Bank of India issued rigorous security guidelines today, urging state cooperative banks to adopt multi-layer transactional validation protocols as regional cyber attacks spike.",
+    summaryTel: "సహకార బ్యాంకులను లక్ష్యంగా చేసుకుని పెరుగుతున్న సైబర్ దాడుల నేపథ్యంలో ఆర్బీఐ అప్రమత్తమైంది. ఆన్‌లైన్ లావాదేవీలకు కఠినమైన బహుళ-అంచెల భద్రతను ఏర్పాటు చేయాలని బ్యాంకులను ఆదేశించింది.",
     category: "Business",
     audienceRate: 77,
     sources: [
@@ -407,6 +436,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "దక్షిణ రాష్ట్రాల్లో రూ.15,000 కోట్ల హరిత ఇంధన పెట్టుబడులకు అదానీ గ్రీన్ నిర్ణయం",
     titleEng: "Adani Green to Invest Rs 15,000 Crore in Solar Parks Across Southern Grid Zones",
     summaryEng: "Adani Green Energy announced a multi-billion green development framework today, targeting expansion of active wind-solar generation fields across southern regions over the next 18 months.",
+    summaryTel: "పర్యావరణ అనుకూల విద్యుత్ ఉత్పత్తి దిశగా అదానీ గ్రీన్ కీలక నిర్ణయం తీసుకుంది. దాదాపు రూ. 15,000 కోట్ల బడ్జెట్‌తో దక్షిణ భారతదేశంలో భారీ సోలార్ పార్కులను ఏర్పాటు చేయనున్నట్లు ప్రకటించింది.",
     category: "Business",
     audienceRate: 89,
     sources: [
@@ -415,9 +445,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "bus-10",
-    titleTel: "ఐరోపా విమానయాన దిగ్గజంతో భారీ క్లౌడ్ ఒప్పందంకుదుర్చుకున్న టిసిఎస్",
+    titleTel: "ఐరోపా విమానయాన దిగ్గజంతో భారీ క్లౌడ్ ఒప్పందం కుదుర్చుకున్న టిసిఎస్",
     titleEng: "TCS Secures Multi-Million Dollar Cloud Overhaul Pact with Euro Airways",
     summaryEng: "Tata Consultancy Services (TCS) locked in an expansive modern hybrid cloud integration model today, which is expected to overhaul ticketing and airline customer service grids globally.",
+    summaryTel: "ప్రముఖ ఐరోపా విమానయాన సంస్థ యూరో ఎయిర్‌వేస్‌తో టాటా కన్సల్టెన్సీ సర్వీసెస్ (టీసీఎస్) వందల మిలియన్ డాలర్ల క్లౌడ్ డీల్ కుదుర్చుకుంది. ఐటీ వ్యవస్థలను ఆధునీకరించడంలో భాగంగా ఈ మైలురాయి దాటారు.",
     category: "Business",
     audienceRate: 91,
     sources: [
@@ -433,6 +464,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "సిబిఎస్‌ఇ 12వ తరగతి రీ-మూల్యాంకన పోర్టల్‌పై భారీ సైబర్ దాడులు",
     titleEng: "CBSE Confirms Blockade as Cyberattacks Target Class 12 Re-evaluation Web Portal",
     summaryEng: "The Central Board of Secondary Education (CBSE) revealed today that its secondary student portal suffered a massive barrage of distributed cyberattacks, forcing temporary downtime during critical re-evaluation requests.",
+    summaryTel: "సీబీఎస్‌ఈ బోర్డు అధికారిక విద్యార్థుల పోర్టల్‌పై హ్యాకర్లు డిస్ట్రిబ్యూటెడ్ డినైల్ ఆఫ్ సర్వీస్ (DDoS) దాడులకు పాల్పడ్డారు. దీనివల్ల రీ-మూల్యాంకన దరఖాస్తులు చేసుకునే సమయంలో పోర్టల్ తాత్కాలికంగా నిలిచిపోయింది.",
     category: "Technology",
     audienceRate: 88,
     sources: [
@@ -444,6 +476,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "హైదరాబాద్ ఇంటర్నేషనల్ ఎయిర్‌పోర్ట్‌లో విప్లవాత్మక ఫేషియల్ గేట్ సేవలు ప్రారంభం",
     titleEng: "GMR Hyderabad Airport Deploys Advanced High-Speed Facial Boarding Hubs",
     summaryEng: "Rajiv Gandhi International Airport today introduced a fully contactless passenger validation gateway. Utilizing modern neural scanning, travelers can now breeze through security checkpoints in under 12 seconds.",
+    summaryTel: "శంషాబాద్ ఎయిర్‌పోర్టులో సరికొత్త బయోమెట్రిక్ ఫేషియల్ రికగ్నిషన్ వ్యవస్థ అందుబాటులోకి వచ్చింది. ప్రయాణికులు ఎటువంటి బోర్డింగ్ పాస్ లేకుండా కేవలం ఫేస్ స్కాన్ ద్వారా కేవలం 12 సెకన్లలోనే లోపలికి వెళ్లవచ్చు.",
     category: "Technology",
     audienceRate: 95,
     sources: [
@@ -455,6 +488,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "వైజాగ్ సెమీకండక్టర్ ఫ్యాబ్రికేషన్ హబ్‌కు ఏపీ ప్రభుత్వం ఆమోదం",
     titleEng: "Andhra Pradesh Ratifies High-Yield Semiconductor Fab Park Layout near Visakhapatnam",
     summaryEng: "A major technology blueprint received cabinet authorization today to establish a designated electronics development zone outside Vizag, backed by localized tax exemptions and modern infrastructure support.",
+    summaryTel: "విశాఖపట్నం సమీపంలో అత్యాధునిక సెమీకండక్టర్ తయారీ ప్లాంట్‌ను ఏర్పాటు చేసే ప్రతిపాదనలకు ఆంధ్రప్రదేశ్ ప్రభుత్వం ఆమోదం తెలిపింది. ఈ ప్రాజెక్ట్ ద్వారా వేలాది మందికి ఉపాధి అవకాశాలు లభించనున్నాయి.",
     category: "Technology",
     audienceRate: 93,
     sources: [
@@ -466,6 +500,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తదుపరి తరం ఇస్రో సమాచార ఉపగ్రహ పరీక్షలు విజయవంతం",
     titleEng: "ISRO Successfully Wraps Up Payload Frequency Tests for Next-Gen Comsat Mission",
     summaryEng: "Scientists at UR Rao Satellite Centre completed crucial thermovacuum payload certifications today on a high-bandwidth digital communications satellite, scheduled for launch next month.",
+    summaryTel: "ఇస్రో శాస్త్రవేత్తలు అంతరిక్ష సమాచార వ్యవస్థను మరింత బలోపేతం చేసేందుకు రూపొందించిన తదుపరి తరం హై-బ్యాండ్‌విడ్త్ శాటిలైట్ థర్మల్ వ్యాక్యూమ్ పరీక్షలను విజయవంతంగా పూర్తి చేశారు.",
     category: "Technology",
     audienceRate: 86,
     sources: [
@@ -477,6 +512,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "టెక్ మహీంద్రా - జేఎన్‌టీయూ భాగస్వామ్యంతో నూతన ఏఐ ల్యాబ్స్ ఏర్పాటు",
     titleEng: "Tech Mahindra and JNTU Forge Pact to Launch Regional AI Research Laboratories",
     summaryEng: "Tech Mahindra partnered with JNTU today to launch dedicated Research Centers, offering computational rigs to thousands of students focusing on neural network and local language software model designs.",
+    summaryTel: "జెఎన్‌టీయూ ప్రాంగణంలో అత్యాధునిక కృత్రిమ మేధస్సు (AI) పరిశోధనా కేంద్రాన్ని ఏర్పాటు చేసేందుకు టెక్ మహీంద్రా ముందుకు వచ్చింది. విద్యార్థులకు క్లౌడ్ కంప్యూటింగ్ రంగంలో ఉచిత శిక్షణ అందించనున్నారు.",
     category: "Technology",
     audienceRate: 79,
     sources: [
@@ -488,6 +524,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ప్రాంతీయ భాషల కోసం ఓపెన్ఏఐ కొత్త వాయిస్ మోడల్స్ ఆవిష్కరణ",
     titleEng: "OpenAI Launches Advanced Indian Dialect Neural Synthesizers for Voice Assistants",
     summaryEng: "OpenAI expanded its API library today, rolling out ultra-low latency voice parameters tuned extensively in Telugu, Tamil, and Kannada dialects to support conversational apps across rural sectors.",
+    summaryTel: "ప్రముఖ గ్లోబల్ టెక్ సంస్థ ఓపెన్ఏఐ తెలుగుతో సహా పలు ప్రాంతీయ భాషలలో పనిచేసే సరికొత్త వాయిస్ కమాండ్ ఏపీఐలను విడుదల చేసింది. ఇది గ్రామీణ సేవలకు ఎంతగానో ఉపయోగపడనుంది.",
     category: "Technology",
     audienceRate: 92,
     sources: [
@@ -499,6 +536,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "హైదరాబాద్ వినియోగదారులను టార్గెట్ చేస్తున్న నూతన మాల్వేర్: సైబరాబాద్ పోలీసుల హెచ్చరిక",
     titleEng: "Cyberabad Police Sound Red Alerts Over 'Kira' Android Trojan targeting Bank Apps",
     summaryEng: "State cyber security divisions detected a localized Trojan campaign today, advising mobile users to immediately avoid installing third-party keyboard programs distributed outside official stores.",
+    summaryTel: "మొబైల్ ఫోన్లలో బ్యాంకింగ్ వివరాలను దొంగిలించే 'కిరా' అనే సరికొత్త ఆండ్రాయిడ్ వైరస్ గురించి సైబరాబాద్ పోలీసులు హెచ్చరించారు. అనధికార వెబ్ సైట్ల నుంచి యాప్‌లు డౌన్ లోడ్ చేయవద్దని సూచించారు.",
     category: "Technology",
     audienceRate: 81,
     sources: [
@@ -510,6 +548,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ప్రముఖ ఈవీ కంపెనీ సరికొత్త సాలిడ్-స్టేట్ బ్యాటరీ టెక్నాలజీ ఆవిష్కరణ",
     titleEng: "Aetherial Motors Unveils Breakthrough Solid-State EV Pack for Regional Commutes",
     summaryEng: "A major automotive tech company debuted a solid-state cell array today, claiming 50% lighter layouts and double the range of current standard lithium assemblies in high-heat Indian summers.",
+    summaryTel: "భారతీయ స్టార్టప్ కంపెనీ ఒకటి ఈవీ వాహనాల కోసం సరికొత్త సాలిడ్-స్టేట్ బ్యాటరీ టెక్నాలజీని ఆవిష్కరించింది. ఇది సాధారణ లిథియం అయాన్ బ్యాటరీల కంటే ఎక్కువ మైలేజీ మరియు సురక్షితమైన పనితీరును ఇస్తుంది.",
     category: "Technology",
     audienceRate: 84,
     sources: [
@@ -521,6 +560,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "గ్రామీణ ప్రాంతీయ ల్యాండింగ్ పోర్టల్స్ కోసం భారీ నిధులను సేకరించిన ఫిన్‌టెక్ స్టార్టప్",
     titleEng: "Rural lending Fintech Startup raises $50M to Deploy Vernacular Loan Processing engines",
     summaryEng: "Fintech innovator 'GrameenPay' secured Series-B funding today to scale automated AI-driven loan verifications across South Indian towns, operating without manual physical documentation requirements.",
+    summaryTel: "గ్రామీణ ప్రాంతాలలో తక్షణ రుణాలను అందించేందుకు 'గ్రామీణ్‌పే' అనే స్టార్టప్ సంస్థ 50 మిలియన్ డాలర్ల నిధులను సేకరించింది. ప్రాంతీయ భాషలలో సులభమైన యాప్‌ల ద్వారా లోన్లు మంజూరు చేయనున్నారు.",
     category: "Technology",
     audienceRate: 89,
     sources: [
@@ -532,6 +572,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "గూగుల్ మ్యాప్స్ లో సరికొత్త హీట్‌వేవ్ మ్యాప్స్ అప్‌డేట్",
     titleEng: "Google Maps Rolls Out Dynamic Heatwave Warning overlays Across South India Grid",
     summaryEng: "Google rolled out a specialized mobile tracking utility today, alerting commuters to extreme local temperature shifts and providing locations of hydration centers dynamically along their routes.",
+    summaryTel: "ఎండ తీవ్రత ఎక్కువగా ఉండే ప్రాంతాల గురించిన సమాచారాన్ని ముందే తెలియజేసేందుకు గూగుల్ మ్యాప్స్ సరికొత్త 'హీట్‌వేవ్ మ్యాపింగ్' అప్‌డేట్ ప్రవేశపెట్టింది. ప్రయాణికులు వేడి గాలుల నుంచి తప్పుకునేందుకు ఇది దోహదపడుతుంది.",
     category: "Technology",
     audienceRate: 90,
     sources: [
@@ -547,6 +588,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "చిట్యాలలో 48.3 డిగ్రీల రికార్డు ఉష్ణోగ్రత: ఏపీ విపత్తుల సంస్థ రెడ్ అలర్ట్",
     titleEng: "APSDMA Sounds Heatwave Emergency as Chityala Smashes Record at 48.3 Degrees",
     summaryEng: "An intense, dangerous heatwave continues to envelop parts of Andhra Pradesh. The state's disaster management agency issued extreme weather red alerts, with Chityala recording today's maximum peak temperature.",
+    summaryTel: "ఆంధ్రప్రదేశ్‌లోని చిట్యాల గ్రామంలో రికార్డు స్థాయిలో 48.3 డిగ్రీల ఉష్ణోగ్రత నమోదైంది. తీవ్రమైన వడగాల్పుల నేపథ్యంలో విపత్తు నిర్వహణ సంస్థ అత్యవసర రెడ్ అలర్ట్ ప్రకటించింది.",
     category: "Weather",
     audienceRate: 97,
     sources: [
@@ -558,6 +600,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తెలంగాణలోకి జూన్ 9 నాటికి ప్రవేశించనున్న రుతుపవనాలు",
     titleEng: "IMD Forecasts Monsoon Arrival in Telangana Delayed Until June 9",
     summaryEng: "The India Meteorological Department (IMD) updated today that the southwest monsoon is progressing slowly across the peninsula and is expected to officially cross into Telangana around June 9, prolonging the dry summer wave.",
+    summaryTel: "నైరుతి రుతుపవనాలు భారత గడ్డపై కాస్త మందగించాయి. ఈ నేపథ్యంలో తెలంగాణలోకి రుతుపవనాలు జూన్ 9వ తేదీ నాటికి ఆలస్యంగా ప్రవేశించే అవకాశం ఉన్నట్లు హైదరాబాద్ వాతావరణ కేంద్రం అంచనా వేసింది.",
     category: "Weather",
     audienceRate: 85,
     sources: [
@@ -569,6 +612,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "రాయలసీమ జిల్లాలో తీవ్ర ఎండలు: ప్రజలు అప్రమత్తంగా ఉండాలని విపత్తుల సంస్థ సూచన",
     titleEng: "Extreme Heatwaves Sweeps Across Rayalaseema mandals; Residents Advised to Stay Indoors",
     summaryEng: "The AP State Disaster Management Authority issued localized warnings today as temperatures consistently crossed 46 degrees in Kadapa and Kurnool. High UV levels were reported during noon hours.",
+    summaryTel: "రాయలసీమ జిల్లాలైన కడప, కర్నూలులో ఉష్ణోగ్రతలు 46 డిగ్రీలు దాటాయి. మధ్యాహ్నం 12 గంటల నుంచి 3 గంటల వరకు ప్రజలు ఇళ్లకే పరిమితం కావాలని, వడదెబ్బ తగలకుండా జాగ్రత్తలు తీసుకోవాలని అధికారులు కోరారు.",
     category: "Weather",
     audienceRate: 91,
     sources: [
@@ -580,6 +624,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ఢిల్లీ ఎన్సీఆర్‌లో రికార్డు స్థాయి ఉష్ణోగ్రత: 47.1 డిగ్రీల ఎండలు",
     titleEng: "Delhi NCR Simmers Under Scorching Conditions as Peak Touches 47.1 Degrees",
     summaryEng: "Weather models reported today that intense thermal winds are expected to persist across the national capital region, prompting emergency services to deploy mobile medical units to crowded market locations.",
+    summaryTel: "దేశ రాజధాని ఢిల్లీ మరియు పరిసర ప్రాంతాలలో తీవ్రమైన ఎండలు మండిపోతున్నాయి. నేడు అత్యధికంగా 47.1 డిగ్రీల ఉష్ణోగ్రత నమోదైంది. వృద్ధులు మరియు పిల్లలు బయటకు రావద్దని ఢిల్లీ ప్రభుత్వం సూచించింది.",
     category: "Weather",
     audienceRate: 94,
     sources: [
@@ -591,6 +636,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "కేరళలో ముందస్తు రుతుపవన జల్లులు: రైతన్నలకు ఊరట",
     titleEng: "Pre-Monsoon Showers Bring Temporary Relief to Central Agricultural Belts in Kerala",
     summaryEng: "Heavy scattered rains hit parts of central Kerala today, offering much-needed relief to tea and cardamom estate owners who had been battling extended dry periods over the last four weeks.",
+    summaryTel: "కేరళలోని మధ్య పర్వత ప్రాంతాలలో ముందస్తు వర్షాలు పడ్డాయి. ఎండవేడికి ఎండిపోతున్న టీ, యాలకుల తోటలకు ఈ జల్లులు కొత్త ఊపిరి పోశాయి. దీంతో స్థానిక రైతులు హర్షం వ్యక్తం చేస్తున్నారు.",
     category: "Weather",
     audienceRate: 73,
     sources: [
@@ -602,6 +648,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "బంగాళాఖాతంలో అల్పపీడనం ఏర్పడే అవకాశం: వాతావరణ నిపుణుల హెచ్చరిక",
     titleEng: "Meteorologists Alert on Possible Cyclonic Depression Forming in East-Central Bay of Bengal",
     summaryEng: "Radar tracking maps monitored atmospheric disturbances today, indicating a minor low-pressure build-up that could intensify into a cyclonic storm, moving toward coastal regions by next week.",
+    summaryTel: "బంగాళాఖాతంలో వచ్చే 24 గంటల్లో అల్పపీడనం బలపడే అవకాశం ఉన్నట్లు ఉపగ్రహ చిత్రాలు సూచిస్తున్నాయి. దీని ప్రభావంతో కోస్తా తీరప్రాంత జిల్లాల్లో బలమైన ఈదురు గాలులతో కూడిన వర్షాలు పడవచ్చు.",
     category: "Weather",
     audienceRate: 82,
     sources: [
@@ -621,9 +668,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "wea-8",
-    titleTel: "హైదరాబాద్‌లో వేగంగా పడిపోతున్న భూగործ జలాలు: వాటర్ బోర్డు ఆందోళన",
+    titleTel: "హైదరాబాద్‌లో వేగంగా పడిపోతున్న భూగర్భ జలాలు: వాటర్ బోర్డు ఆందోళన",
     titleEng: "Hyderabad Ground Water Table Drops by 3 Meters; Board Plans Emergency Water supply",
     summaryEng: "The Hyderabad Metropolitan Water Supply board issued conservation advisories today after surveys indicated sharp depletion across western tech corridors, scheduling immediate emergency tanker fleets.",
+    summaryTel: "హైదరాబాద్‌ లోని ఐటీ కారిడార్ ఏరియాలో భూగర్భ జలాలు భారీగా పడిపోయాయి. గత ఏడాదితో పోలిస్తే సగటున 3 మీటర్ల లోతుకు జలాలు వెళ్లడంతో వాటర్ బోర్డ్ అత్యవసర ట్యాంకర్ సేవలను సిద్ధం చేసింది.",
     category: "Weather",
     audienceRate: 88,
     sources: [
@@ -635,6 +683,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "గ్రామీణ జిల్లాల్లో థర్మల్ స్కానింగ్ ప్రారంభించిన ఏపీ విపత్తుల సంస్థ",
     titleEng: "AP Disaster Authority Initiates District-wide Thermal Scanning to Track Sunstrokes",
     summaryEng: "Mobile testing units equipped with digital thermal imagers deployed across five high-risk agricultural zones today, offering swift hydration checks and saline injections to field workers.",
+    summaryTel: "గ్రామీణ ప్రాంతాలలో పొలాల్లో పనిచేసే వ్యవసాయ కూలీల కోసం విపత్తు నిర్వహణ సంస్థ థర్మల్ స్కానింగ్ క్యాంపులను ప్రారంభించింది. వడదెబ్బకు గురైన వారికి అక్కడికక్కడే చికిత్స అందిస్తున్నారు.",
     category: "Weather",
     audienceRate: 75,
     sources: [
@@ -646,6 +695,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "రాయలసీమలో రికార్డు స్థాయి యూవీ ఇండెక్స్: చర్మ నిపుణుల ప్రత్యేక సూచనలు",
     titleEng: "Record-High UV Index Monitored Across Rayalaseema; Dermatologists Urge Sunscreen Blocks",
     summaryEng: "Medical experts warned citizens today to avoid direct skin exposure between 11 AM and 3 PM as the UV index climbed to dangerous Levels, highlighting rising skin inflammation risks.",
+    summaryTel: "రాయలసీమ అంతటా సూర్యరశ్మిలోని అల్ట్రావైలెట్ (UV) కిరణాల తీవ్రత ప్రమాదకర స్థాయికి చేరింది. చర్మవ్యాధుల నిపుణులు ప్రజలు గొడుగులు లేకుండా ఎండలో ప్రయాణించవద్దని హెచ్చరించారు.",
     category: "Weather",
     audienceRate: 90,
     sources: [
@@ -661,6 +711,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "హైదరాబాద్ మెట్రో రెడ్ లైన్‌లో సాంకేతిక సమస్య: గంటపాటు నిలిచిన రైలు సర్వీసులు",
     titleEng: "Hyderabad Metro Red Line Suffers Overhead Cable Fault, Rapid Service Restored",
     summaryEng: "Hundreds of commuters experienced delay after an electrical transmission disruption halted trains near Ameerpet today. Engineers repaired the supply line, allowing transit to fully normalize within the hour.",
+    summaryTel: "హైదరాబాద్ మెట్రో రెడ్ లైన్ పరిధిలోని అమీర్‌పేట వద్ద విద్యుత్ వైర్లలో సాంకేతిక లోపం తలెత్తింది. దీంతో దాదాపు గంటపాటు మెట్రో రైళ్లు నిలిచిపోవడంతో ప్రయాణికులు తీవ్ర ఇబ్బందులు పడ్డారు.",
     category: "Regional",
     audienceRate: 93,
     sources: [
@@ -672,6 +723,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "జేఈఈ అడ్వాన్స్‌డ్ 2026 ఫలితాలు: శ్రీ చైతన్య విద్యార్థుల ప్రభంజనం",
     titleEng: "JEE Advanced 2026 Results Out: South India Sweeps Top Positions, Hyderabad Dominates",
     summaryEng: "The prestigious JEE Advanced scores were declared today. National top ranks were heavily claimed by elite student groups coaching in Hyderabad, reinforcing the city's status as a major academic incubator.",
+    summaryTel: "దేశంలో అత్యంత ప్రతిష్టాత్మకమైన జేఈఈ అడ్వాన్స్‌డ్ ఫలితాలు ఈరోజు విడుదలయ్యాయి. ఆంధ్రప్రదేశ్ మరియు తెలంగాణకు చెందిన శ్రీ చైతన్య విద్యా సంస్థల విద్యార్థులు టాప్ ర్యాంకులతో సంచలనం సృష్టించారు.",
     category: "Regional",
     audienceRate: 96,
     sources: [
@@ -683,6 +735,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ఏపీ-తెలంగాణ హైవేకు ఎన్టీఆర్ పేరు పెట్టాలని పవన్ కళ్యాణ్ ప్రతిపాదన",
     titleEng: "Pawan Kalyan Proposes Naming AP-Telangana Highway After Legend NT Rama Rao",
     summaryEng: "Jana Sena Chief Pawan Kalyan today floated a prominent recommendation to state authorities, urging that the major highway network connecting Andhra Pradesh and Telangana be named in honor of the legendary NT Rama Rao.",
+    summaryTel: "రెండు తెలుగు రాష్ట్రాలను కలిపే జాతీయ రహదారికి స్వర్గీయ నందమూరి తారక రామారావు (ఎన్టీఆర్) పేరు పెట్టాలని జనసేన అధినేత పవన్ కళ్యాణ్ ప్రభుత్వానికి అధికారికంగా ప్రతిపాదించారు.",
     category: "Regional",
     audienceRate: 95,
     sources: [
@@ -694,6 +747,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "జమ్మూకశ్మీర్‌లో ఘనంగా ప్రారంభమైన చెర్రీ పండ్ల కోత సీజన్",
     titleEng: "Cherries Harvest Season Commences in J&K, Farmers Eye Lucrative Exports",
     summaryEng: "Orchards across Ganderbal district were abuzz with activity today as the annual sweet cherry harvest started. Cultivators are hoping for smooth transport logistics to supply premium global buyers.",
+    summaryTel: "జమ్మూకశ్మీర్‌ లోని గందర్‌బల్ జిల్లాలో చెర్రీ పండ్ల కోత పండుగలా ప్రారంభమైంది. ఈసారి పంట ఆశాజనకంగా ఉండడంతో విదేశీ ఎగుమతుల ద్వారా మంచి లాభాలు వస్తాయని రైతులు భావిస్తున్నారు.",
     category: "Regional",
     audienceRate: 67,
     sources: [
@@ -705,6 +759,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "అస్సాం రైఫిల్స్ మరియు ఎన్‌సిడిఎఫ్‌ఐ మధ్య కీలక పాల ఉత్పత్తి ఒప్పందం",
     titleEng: "Assam Rifles Partner with NCDFI to Expand Dairy Infrastructure Across Northeast",
     summaryEng: "A major memorandum of agreement was signed in New Delhi today. The strategic collaboration aims to empower local farming communities and upgrade dairy preservation facilities in hilly environments.",
+    summaryTel: "ఈశాన్య రాష్ట్రాలలో పాల ఉత్పత్తి రంగంలో విప్లవాత్మక మార్పుల కోసం అస్సాం రైఫిల్స్ మరియు జాతీయ డెయిరీ సమాఖ్య మధ్య న్యూఢిల్లీలో చారిత్రాత్మక అవగాహన ఒప్పందం కుదిరింది.",
     category: "Regional",
     audienceRate: 63,
     sources: [
@@ -716,6 +771,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "హైదరాబాద్ రియల్ ఎస్టేట్ రికార్డు నమోదు: విలాసవంతమైన ఇళ్ల కొనుగోళ్లు పెరిగాయి",
     titleEng: "Hyderabad Real Estate Registers All-Time High registrations in High-Value Housing",
     summaryEng: "The state property registration department published financial stats today, revealing a massive 35% surge in multi-crore luxury high-rise property acquisitions within financial corridor locations.",
+    summaryTel: "హైదరాబాద్ మహానగరంలో రియల్ ఎస్టేట్ వ్యాపారం సరికొత్త శిఖరాలకు చేరింది. గిరాకీ పెరగడంతో గడచిన నెల రోజుల్లోనే లగ్జరీ అపార్ట్‌మెంట్స్ రిజిస్ట్రేషన్ల ద్వారా ప్రభుత్వానికి రికార్డు ఆదాయం వచ్చింది.",
     category: "Regional",
     audienceRate: 89,
     sources: [
@@ -727,6 +783,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "తిరుమల కొండపై ఎండల దృష్ట్యా ప్రత్యేక వసతులు కల్పించిన టీటీడీ",
     titleEng: "Tirumala TTD Deploys Shaded Footpaths and Cool-Gel Paint coatings for Summer Rush",
     summaryEng: "Tirumala temple authorities finished painting key queue lanes with heat-reflecting technology today, ensuring thousands of barefoot devotees are protected from high path temperatures during peak hours.",
+    summaryTel: "తిరుమల శ్రీవారి దర్శనార్థం వచ్చే భక్తుల కోసం టీటీడీ ప్రత్యేక ఏర్పాట్లు చేసింది. ఎండ తీవ్రత దృష్ట్యా నడక దారులలో కూల్ పెయింటింగ్ వేసి నీడను అందించే తాత్కాలిక షెడ్లను ఏర్పాటు చేశారు.",
     category: "Regional",
     audienceRate: 91,
     sources: [
@@ -738,6 +795,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "రక్షిత తాగునీటి వ్యవస్థ పూర్తి చేయడానికి నిధులు కేటాయించిన తెలంగాణ ప్రభుత్వం",
     titleEng: "Telangana Cabinet Allocates Rs 500 Crore to Complete Rural Water Supply networks",
     summaryEng: "The state finance department released targeted treasury payouts today to accelerate pipelines in critical dry blocks, aiming to secure daily tap water to 3,400 rural villages by the end of July.",
+    summaryTel: "తెలంగాణలోని మారుమూల గ్రామాల్లో మంచినీటి కొరతను అధిగమించేందుకు కేబినెట్ రూ. 500 కోట్లను విడుదల చేసింది. వచ్చే నెల లోపు ఇంటింటికి తాగునీరు అందించడమే లక్ష్యంగా పనులు జరగనున్నాయి.",
     category: "Regional",
     audienceRate: 84,
     sources: [
@@ -746,9 +804,10 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "reg-9",
-    titleTel: "జూన్ 3 నేటి ద్వాదశ రాశిఫలాలు: హంస రాజయోగంతో ఈ రాశుల వారికి అదృష్టం",
+    titleTel: "నేటి ద్వాదశ రాశిఫలాలు: హంస రాజయోగంతో ఈ రాశుల వారికి అదృష్టం",
     titleEng: "Daily Astrological Alignments: Hansa Rajyoga Brings Career Growth Today",
     summaryEng: "A rare and highly auspicious celestial conjunction involving Jupiter's transit through Cancer was celebrated across regional temples today, with scholars forecasting rapid career turnarounds.",
+    summaryTel: "జ్యోతిష్య శాస్త్రం ప్రకారం నేడు ఏర్పడిన అరుదైన హంస రాజయోగం వల్ల ఐదు రాశుల వారికి విపరీతమైన ధనలాభం మరియు కెరీర్ లో ఊహించని ప్రమోషన్లు లభించనున్నాయి.",
     category: "Regional",
     audienceRate: 94,
     sources: [
@@ -760,6 +819,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "ఈనాడు దినపత్రిక నేటి ద్వాదశ రాశి ఫలాలు ప్రచురణ",
     titleEng: "Eenadu Publishes Comprehensive Zodiac Assessments for Today's Activities",
     summaryEng: "A major printed forecast released early today by the regional publication outlined critical physical wellness, legal considerations, and investment timelines for all 12 sun signs.",
+    summaryTel: "ఈనాడు దినపత్రిక నేడు ప్రచురించిన ద్వాదశ రాశిఫలాల ప్రకారం వృషభ, సింహ రాశుల వారికి ఈరోజు అన్ని పనులలో విజయం లభించనుండగా, కొన్ని రాశుల వారు ఖర్చులపై నియంత్రణ కలిగి ఉండాలి.",
     category: "Regional",
     audienceRate: 88,
     sources: [
@@ -768,16 +828,11 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   }
 ];
 
-// ==========================================================
-// DYNAMIC PIPELINE SCHEDULING ENGINE
-// Automatically populates current system dates & relative hours
-// ==========================================================
 const generateDynamicStories = (): Story[] => {
   const currentDateStr = getFormattedCurrentDate();
   const now = new Date();
 
   return RAW_STORIES_TEMPLATES.map((story, index) => {
-    // Generate unique rolling timestamps sequentially to guarantee chronological authenticity.
     const minutesToSubtract = index * 14 + Math.floor(Math.random() * 8); 
     const targetTime = new Date(now.getTime() - minutesToSubtract * 60 * 1000);
 
@@ -789,7 +844,6 @@ const generateDynamicStories = (): Story[] => {
 
     const epochTime = targetTime.getTime();
 
-    // Map source models with dynamic dates matching the publication timelines
     const dynamicSources = story.sources.map(src => ({
       ...src,
       publishedDate: `${currentDateStr}, ${formattedHour} IST`
@@ -813,7 +867,6 @@ export default function App() {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
   
-  // Real-time tracking of runtime variables
   const [liveDateStamp, setLiveDateStamp] = useState(getFormattedCurrentDate());
   const [liveTeluguDateStamp, setLiveTeluguDateStamp] = useState(getTeluguCurrentDate());
   const [auditStats, setAuditStats] = useState({ 
@@ -822,11 +875,9 @@ export default function App() {
     timestampLimit: "" 
   });
 
-  // Load dynamically scheduled parameters on mount
   useEffect(() => {
     runInternalAuditAndLoad();
     
-    // Interval check to keep system stamps aligned if user leaves tab active
     const timer = setInterval(() => {
       setLiveDateStamp(getFormattedCurrentDate());
       setLiveTeluguDateStamp(getTeluguCurrentDate());
@@ -839,29 +890,22 @@ export default function App() {
     setIsRefreshing(true);
     
     setTimeout(() => {
-      // Calculate live dynamic dataset based on exact user timestamp
       const dynamicPool = generateDynamicStories();
       const rawTotal = dynamicPool.length;
       
-      // Sort chronologically (FRESHEST AT THE TOP)
       const sortedPool = [...dynamicPool].sort((a, b) => b.epochTime - a.epochTime);
 
-      // Random Shuffler: Shuffles the deep 60 dynamic pool to secure 30 unique stories on every click
       const shuffled = sortedPool
         .map(value => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
         .map(({ value }) => value);
 
-      // Slice out exactly 30 high-density records as required
       const auditedSelection = shuffled.slice(0, 30);
-
-      // Resort the active 30 items chronologically so the list remains logical
       const finalizedTimeline = [...auditedSelection].sort((a, b) => b.epochTime - a.epochTime);
 
       setStories(finalizedTimeline);
       setSelectedStory(finalizedTimeline[0] || null);
       
-      // Update global audit log to reflect live user system parameters
       const currentLabel = getFormattedCurrentDate();
       setLiveDateStamp(currentLabel);
       setLiveTeluguDateStamp(getTeluguCurrentDate());
@@ -917,7 +961,8 @@ export default function App() {
 Context: Strictly Dated ${liveDateStamp}
 Breaking Title: ${story.titleEng}
 Telugu Headline: ${story.titleTel}
-Synthesized Summary: ${story.summaryEng}
+Synthesized Summary (English): ${story.summaryEng}
+Synthesized Summary (Telugu): ${story.summaryTel}
 
 Source Reference Links:
 ${story.sources.map((src) => `- ${src.name}: ${src.link} (Published: ${src.publishedDate})`).join('\n')}
@@ -932,7 +977,6 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
 
   const filteredStoriesList = useMemo(() => {
     const query = searchTerm.toLowerCase().trim();
-    // Search scans through the entirety of the master pool to maintain structural integrity
     const dynamicPool = generateDynamicStories();
     const targetSet = query ? dynamicPool : stories;
 
@@ -978,7 +1022,6 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Active Date Badge (Calculated Dynamically based on current user date) */}
           <div className="bg-slate-950/70 border border-slate-800 text-[10px] px-3 py-1 rounded-full flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
             <span className="text-slate-300 font-semibold tracking-wider font-mono">
@@ -1046,10 +1089,10 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
         </div>
       </div>
 
-      {/* Main Split Grid Layout: Widescreen Adaptive Frame (EQUAL 50/50 COLUMNS ON DESKTOP) */}
+      {/* Main Split Grid Layout: Widescreen Adaptive Frame (Symmetrical 50/50 Columns) */}
       <main className="flex-1 overflow-hidden flex flex-col md:flex-row">
         
-        {/* Left Pane: Sequential Stream Listings (EQUAL WIDTH AT md:w-1/2) */}
+        {/* Left Column: Symmetrical half screen stream listings */}
         <section className="w-full md:w-1/2 flex-shrink-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
           <div className="flex-none p-2 bg-slate-950/80 border-b border-slate-900/60 flex justify-between items-center">
             <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider flex items-center gap-1.5">
@@ -1157,7 +1200,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
           </div>
         </section>
 
-        {/* Right Pane: Main reading focus area, fills exactly the other half of widescreen monitor space (md:w-1/2) */}
+        {/* Right Column: Symmetrical half screen workspace console focus area */}
         <section className="w-full md:w-1/2 flex flex-col overflow-hidden bg-slate-900/10">
           {selectedStory ? (
             <div className="flex-1 flex flex-col overflow-hidden">
@@ -1196,12 +1239,23 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
                   </div>
                 </div>
 
+                {/* English Narrative Summary Panel */}
                 <div className="bg-slate-950/80 rounded-lg p-3.5 border border-slate-850/60 space-y-1.5">
                   <h4 className="text-[9px] uppercase tracking-wider font-extrabold text-slate-400">
                     Verified Narrative Summary (Synthesized)
                   </h4>
                   <p className="text-xs md:text-sm lg:text-base text-slate-300 leading-relaxed">
                     {selectedStory.summaryEng}
+                  </p>
+                </div>
+
+                {/* Telugu Brief Panel */}
+                <div className="bg-slate-950/80 rounded-lg p-3.5 border border-slate-850/60 space-y-1.5">
+                  <h4 className="text-[9px] uppercase tracking-wider font-extrabold text-amber-400 flex items-center gap-1">
+                    తెలుగు సంక్షిప్త సమాచారం (Telugu Brief)
+                  </h4>
+                  <p className="text-sm md:text-base text-slate-200 leading-relaxed font-telugu font-medium">
+                    {selectedStory.summaryTel}
                   </p>
                 </div>
 
