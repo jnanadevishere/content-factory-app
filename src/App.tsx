@@ -445,7 +445,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
   },
   {
     id: "bus-10",
-    titleTel: "ఐరోపా విమానయాన దిగ్గజంతో భారీ క్లౌడ్ ఒప్పందం కుదుర్చుకున్న టిసిఎస్",
+    titleTel: "ఐరోపా విమానయాన దిగ్గజంతో భారీ క్లౌడ్ ఒప్పందం కుదుర్చుకున్న టిసిెస్",
     titleEng: "TCS Secures Multi-Million Dollar Cloud Overhaul Pact with Euro Airways",
     summaryEng: "Tata Consultancy Services (TCS) locked in an expansive modern hybrid cloud integration model today, which is expected to overhaul ticketing and airline customer service grids globally.",
     summaryTel: "ప్రముఖ ఐరోపా విమానయాన సంస్థ యూరో ఎయిర్‌వేస్‌తో టాటా కన్సల్టెన్సీ సర్వీసెస్ (టీసీఎస్) వందల మిలియన్ డాలర్ల క్లౌడ్ డీల్ కుదుర్చుకుంది. ఐటీ వ్యవస్థలను ఆధునీకరించడంలో భాగంగా ఈ మైలురాయి దాటారు.",
@@ -712,7 +712,7 @@ const RAW_STORIES_TEMPLATES: RawTemplate[] = [
     titleTel: "హైదరాబాద్ మెట్రో రెడ్ లైన్‌లో సాంకేతిక సమస్య: గంటపాటు నిలిచిన రైలు సర్వీసులు",
     titleEng: "Hyderabad Metro Red Line Suffers Overhead Cable Fault, Rapid Service Restored",
     summaryEng: "Hundreds of commuters experienced delay after an electrical transmission disruption halted trains near Ameerpet today. Engineers repaired the supply line, allowing transit to fully normalize within the hour.",
-    summaryTel: "హైదరాబాద్ మెట్రో రెడ్ లైన్ పరిధిలోని అమీర్‌పేట వద్ద విద్యుత్ వైర్లలో సాంకేతిక లోపం తలెత్తింది. దీంతో దాదాపు గంటపాటు మెట్రో రైళ్లు నిలిచిపోవడంతో ప్రయాణికులు తీవ్ర ఇబ్బందులు పడ్డారు.",
+    summaryTel: "హైదరాబాద్ మెట్రో రెడ్ లైన్ పరిధిలోని అమీర్‌పేట వద్ద విద్యుత్ వైర్లలో సాంకేతిక లోపం తలెత్తింది. దీంతో దాదాపు గంటపాటు మెట్రో రైళ్లు నిలిచిపోవడంతో ప్రయాణికులు తీవ్ర ఇబ్బందులు పారు.",
     category: "Regional",
     audienceRate: 93,
     sources: [
@@ -1090,11 +1090,11 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
         </div>
       </div>
 
-      {/* Main Split Grid Layout: Widescreen Adaptive Frame (Symmetrical 50/50 Columns) */}
-      <main className="flex-1 overflow-hidden flex flex-col md:flex-row">
+      {/* Main Split Grid Layout: Widescreen Adaptive Frame (EXACT SYMMETRICAL 50/50 SPLIT VIA CSS GRID) */}
+      <main className="flex-1 overflow-hidden grid grid-cols-1 md:grid-cols-2">
         
         {/* Left Column: Symmetrical half screen stream listings */}
-        <section className="w-full md:w-1/2 flex-shrink-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
+        <section className="min-w-0 border-r border-slate-900 flex flex-col overflow-hidden bg-slate-950">
           <div className="flex-none p-2 bg-slate-950/80 border-b border-slate-900/60 flex justify-between items-center">
             <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider flex items-center gap-1.5">
               <Filter className="w-3 h-3 text-indigo-400" />
@@ -1171,8 +1171,8 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
                               <span className="font-semibold text-slate-300">{src.name}</span>
                               <span className="font-mono text-[8px]">{src.publishedDate}</span>
                             </div>
-                            <div className="flex items-center justify-between gap-1">
-                              <span className="text-slate-500 font-mono text-[8.5px] truncate block max-w-[280px] sm:max-w-[320px] md:max-w-[340px] lg:max-w-[420px] xl:max-w-[550px]">
+                            <div className="flex items-center justify-between gap-2 min-w-0">
+                              <span className="text-slate-500 font-mono text-[8.5px] truncate block flex-1 min-w-0" title={src.link}>
                                 {src.link}
                               </span>
                               <button
@@ -1202,7 +1202,7 @@ Using the custom Gem parameters, generate high-impact media copy, localized Telu
         </section>
 
         {/* Right Column: Symmetrical half screen workspace console focus area */}
-        <section className="w-full md:w-1/2 flex flex-col overflow-hidden bg-slate-900/10">
+        <section className="min-w-0 flex flex-col overflow-hidden bg-slate-900/10">
           {selectedStory ? (
             <div className="flex-1 flex flex-col overflow-hidden">
               
